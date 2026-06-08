@@ -7,20 +7,29 @@ const prisma = new PrismaClient();
 
 // This ensures Next.js statically generates these pages at build time
 export async function generateStaticParams() {
-  const jobs = await prisma.jobProfile.findMany({ select: { slug: true } });
-  return jobs.map((job) => ({ slug: job.slug }));
+  try {
+    const jobs = await prisma.jobProfile.findMany({ select: { slug: true } });
+    return jobs.map((job) => ({ slug: job.slug }));
+  } catch (error) {
+    console.error("Database connection failed during build, skipping static param generation.", error);
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const job = await prisma.jobProfile.findUnique({ where: { slug } });
-  
-  if (!job) return { title: 'Resume Templates' };
-  
-  return {
-    title: `${job.jobTitle} Resume Templates & Builder | ResumeGenius Pro`,
-    description: `Build the perfect ${job.jobTitle} resume. Discover essential skills, average salary insights, and expert tips to land your next job.`,
-  };
+  try {
+    const { slug } = await params;
+    const job = await prisma.jobProfile.findUnique({ where: { slug } });
+    
+    if (!job) return { title: 'Resume Templates' };
+    
+    return {
+      title: `${job.jobTitle} Resume Templates & Builder | ResumeGenius Pro`,
+      description: `Build the perfect ${job.jobTitle} resume. Discover essential skills, average salary insights, and expert tips to land your next job.`,
+    };
+  } catch (error) {
+    return { title: 'Resume Templates' };
+  }
 }
 
 export default async function ProgrammaticSEOPage({ params }) {
