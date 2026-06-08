@@ -4,14 +4,22 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import ResumeForm from "@/components/ResumeForm";
 import ResumePreview from "@/components/ResumePreview";
-import { Download, CloudUpload, Loader2, PenLine, Eye } from "lucide-react";
+import { Download, CloudUpload, Loader2, PenLine, Eye, Palette } from "lucide-react";
+
+const TEMPLATES = [
+  { id: "classic", name: "Classic", desc: "Clean & Traditional" },
+  { id: "modern", name: "Modern", desc: "Two-Column Sidebar" },
+  { id: "executive", name: "Executive", desc: "Elegant & Serif" },
+  { id: "minimal", name: "Minimal", desc: "Ultra-Clean" },
+];
 
 export default function BuilderPage() {
   const { data: session } = useSession();
   const [isSaving, setIsSaving] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("edit"); // "edit" or "preview"
+  const [activeTab, setActiveTab] = useState("edit");
   const [saveMessage, setSaveMessage] = useState("");
+  const [template, setTemplate] = useState("classic");
 
   const [resumeData, setResumeData] = useState({
     personal: { name: "", title: "", email: "", phone: "", location: "", website: "" },
@@ -199,12 +207,39 @@ export default function BuilderPage() {
             </div>
           )}
 
+          {/* Template Selector */}
+          <div className="glass-panel" style={{ padding: '1rem 1.25rem', marginBottom: '1.5rem' }}>
+            <h3 className="section-heading" style={{ marginBottom: '0.75rem' }}><Palette size={16} /> Choose Template</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.5rem' }}>
+              {TEMPLATES.map(t => (
+                <button
+                  key={t.id}
+                  onClick={() => setTemplate(t.id)}
+                  style={{
+                    padding: '0.6rem 0.75rem',
+                    borderRadius: '8px',
+                    border: template === t.id ? '2px solid var(--accent)' : '1px solid var(--glass-border)',
+                    background: template === t.id ? 'var(--accent-glow)' : 'rgba(15, 23, 42, 0.4)',
+                    color: template === t.id ? 'var(--accent)' : 'var(--text-muted)',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    fontFamily: 'inherit',
+                    transition: 'var(--transition)',
+                  }}
+                >
+                  <div style={{ fontSize: '0.85rem', fontWeight: 600 }}>{t.name}</div>
+                  <div style={{ fontSize: '0.7rem', opacity: 0.7 }}>{t.desc}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
           <ResumeForm data={resumeData} onChange={setResumeData} />
         </div>
 
         {/* Main Content: Preview */}
         <div className={`builder-preview-container ${activeTab === 'edit' ? 'hidden-mobile' : ''}`}>
-          <ResumePreview data={resumeData} />
+          <ResumePreview data={resumeData} template={template} />
         </div>
       </div>
     </>
