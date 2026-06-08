@@ -1,12 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSession } from "next-auth/react";
 import ResumeForm from "@/components/ResumeForm";
 import ResumePreview from "@/components/ResumePreview";
-import { Download, Save } from "lucide-react";
+import { Download, CloudUpload, Loader2 } from "lucide-react";
 
 export default function BuilderPage() {
+  const { data: session } = useSession();
+  const [isSaving, setIsSaving] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  
   const [resumeData, setResumeData] = useState({
+    personal: { name: "", title: "", email: "", phone: "", location: "", website: "" },
+    summary: "",
+    experience: [],
+    education: [],
+    skills: ""
+  });
+
+  // Default fallback data
+  const defaultData = {
     personal: {
       name: "Jane Doe",
       title: "Senior Software Engineer",
@@ -23,13 +37,6 @@ export default function BuilderPage() {
         role: "Senior Frontend Engineer",
         date: "Jan 2022 - Present",
         description: "Led the migration of a legacy Angular application to Next.js, improving page load speeds by 40%. Mentored junior developers and established code quality standards."
-      },
-      {
-        id: 2,
-        company: "Web Solutions LLC",
-        role: "Web Developer",
-        date: "Jun 2018 - Dec 2021",
-        description: "Developed and maintained multiple client websites using React and Redux. Collaborated closely with designers to implement pixel-perfect UI components."
       }
     ],
     education: [
@@ -40,8 +47,33 @@ export default function BuilderPage() {
         date: "2014 - 2018"
       }
     ],
-    skills: "JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, MongoDB, GraphQL, Git, Docker, AWS"
-  });
+    skills: "JavaScript, TypeScript, React, Next.js, Node.js, Express, PostgreSQL, MongoDB"
+  };
+
+  useEffect(() => {
+    async function loadResume() {
+      if (session?.user) {
+        try {
+          const res = await fetch("/api/resume");
+          if (res.ok) {
+            const result = await res.json();
+            if (result.resume) {
+              setResumeData(result.resume.data);
+            } else {
+              setResumeData(defaultData); // new user
+            }
+          }
+        } catch (error) {
+          console.error("Failed to load resume", error);
+        }
+      } else {
+        setResumeData(defaultData); // guest user
+      }
+      setIsLoading(false);
+    }
+    
+    loadResume();
+  }, [session]);
 
   const handleExport = async () => {
     const html2pdf = (await import('html2pdf.js')).default;
@@ -56,6 +88,34 @@ export default function BuilderPage() {
     html2pdf().from(element).set(opt).save();
   };
 
+  const handleSave = async () => {
+    if (!session) return alert("Please sign in to save your resume to the cloud.");
+    setIsSaving(true);
+    try {
+      const res = await fetch("/api/resume", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ data: resumeData }),
+      });
+      if (res.ok) {
+        alert("Resume saved successfully!");
+      } else {
+        alert("Failed to save resume.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("An error occurred while saving.");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
+  if (isLoading) {
+    return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Loader2 size={48} className="animate-spin" color="var(--accent)" />
+    </div>;
+  }
+
   return (
     <div className="builder-layout">
       {/* Sidebar: Inputs */}
@@ -65,7 +125,11 @@ export default function BuilderPage() {
           <div style={{ display: 'flex', gap: '0.5rem' }}>
             <button className="btn btn-primary" onClick={handleExport}>
               <Download size={18} />
-              Export PDF
+              Export
+            </button>
+            <button className="btn" style={{ background: 'var(--glass-bg)', color: 'var(--text-light)', border: '1px solid var(--glass-border)' }} onClick={handleSave} disabled={isSaving}>
+              {isSaving ? <Loader2 size={18} className="animate-spin" /> : <CloudUpload size={18} />}
+              Save
             </button>
           </div>
         </div>
