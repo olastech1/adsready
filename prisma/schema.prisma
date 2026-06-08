@@ -16,12 +16,12 @@ model Account {
   type               String
   provider           String
   providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
+  refresh_token      String?
+  access_token       String?
   expires_at         Int?
   token_type         String?
   scope              String?
-  id_token           String?  @db.Text
+  id_token           String?
   session_state      String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -63,7 +63,7 @@ model VerificationToken {
 model Resume {
   id        String   @id @default(cuid())
   title     String   @default("Untitled Resume")
-  data      String   @db.LongText // Storing as JSON string
+  data      String   // Storing as JSON string
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   createdAt DateTime @default(now())
@@ -75,9 +75,9 @@ model JobProfile {
   jobTitle            String
   slug                String   @unique
   salary              String
-  skills              String   @db.Text
-  description         String   @db.Text
-  industryTips        String   @db.Text
+  skills              String
+  description         String
+  industryTips        String
   templateRecommended String
   createdAt           DateTime @default(now())
   updatedAt           DateTime @updatedAt
