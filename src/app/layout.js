@@ -8,11 +8,11 @@ import CookieConsent from "@/components/CookieConsent";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "ResumeGenius Pro — Build Professional Resumes in Minutes",
+  title: "Olaniyi Careers — Build Professional Resumes in Minutes",
   description: "Create stunning, ATS-friendly resumes with our free online resume builder. Instant live preview, one-click PDF export, and expert career guides.",
-  metadataBase: new URL("https://adsready.vercel.app"),
+  metadataBase: new URL("https://olaniyi.me"),
   openGraph: {
-    title: "ResumeGenius Pro — Build Professional Resumes in Minutes",
+    title: "Olaniyi Careers — Build Professional Resumes in Minutes",
     description: "Create stunning, ATS-friendly resumes with our free online resume builder.",
     type: "website",
   },

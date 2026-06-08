@@ -35,7 +35,7 @@ export default function ContactPage() {
 
       <p>
         Have a question, suggestion, or just want to say hello? Fill out the form below or reach us 
-        through any of the channels listed. Our team is here to help you make the most of ResumeGenius Pro.
+        through any of the channels listed. Our team is here to help you make the most of Olaniyi Careers.
       </p>
 
       <div className="contact-grid">
@@ -102,7 +102,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <div style={{ fontWeight: 600, marginBottom: '0.2rem', fontSize: '0.95rem' }}>Email</div>
-                <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>support@resumegeniuspro.com</div>
+                <div style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>support@olaniyi.me</div>
               </div>
             </div>
 

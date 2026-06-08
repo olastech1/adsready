@@ -4,7 +4,7 @@ import { ArrowLeft, Clock } from "lucide-react";
 import AdPlacement from "@/components/AdPlacement";
 
 export const metadata = {
-  title: "50 Action Verbs for Tech Resumes in 2026 | ResumeGenius Pro",
+  title: "50 Action Verbs for Tech Resumes in 2026 | Olaniyi Careers",
   description: "Stop using 'Responsible for.' Use these 50 powerful action verbs categorized by skill type to make your tech resume stand out to recruiters and ATS systems.",
 };
 

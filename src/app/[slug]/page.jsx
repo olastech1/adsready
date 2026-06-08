@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
     if (!job) return { title: 'Resume Templates' };
     
     return {
-      title: `${job.jobTitle} Resume Templates & Builder | ResumeGenius Pro`,
+      title: `${job.jobTitle} Resume Templates & Builder | Olaniyi Careers`,
       description: `Build the perfect ${job.jobTitle} resume. Discover essential skills, average salary insights, and expert tips to land your next job.`,
     };
   } catch (error) {

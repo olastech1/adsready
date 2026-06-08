@@ -4,7 +4,7 @@ import { Clock, ArrowRight } from "lucide-react";
 import AdPlacement from "@/components/AdPlacement";
 
 export const metadata = {
-  title: "Career Hub & Resume Tips | ResumeGenius Pro",
+  title: "Career Hub & Resume Tips | Olaniyi Careers",
   description: "Read our latest articles on how to craft the perfect resume, beat ATS systems, negotiate your salary, and land your dream job. Expert career advice and actionable tips.",
 };
 

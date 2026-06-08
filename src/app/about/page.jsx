@@ -2,24 +2,24 @@ import Link from "next/link";
 import { Target, Users, Shield, Zap, ArrowRight } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | ResumeGenius Pro",
-  description: "Learn about ResumeGenius Pro — our mission to help job seekers create professional resumes and land their dream jobs with powerful, free tools.",
+  title: "About Us | Olaniyi Careers",
+  description: "Learn about Olaniyi Careers — our mission to help job seekers create professional resumes and land their dream jobs with powerful, free tools.",
 };
 
 export default function AboutPage() {
   return (
     <div className="content-page">
-      <h1>About ResumeGenius Pro</h1>
+      <h1>About Olaniyi Careers</h1>
       <p className="page-date">Our Mission & Story</p>
 
       <p>
-        ResumeGenius Pro was founded with a simple belief: everyone deserves access to professional-quality 
+        Olaniyi Careers was founded with a simple belief: everyone deserves access to professional-quality 
         resume tools, regardless of their budget. In a job market where first impressions are made in 
         six seconds, your resume needs to be flawless — and that should not come with a price tag.
       </p>
 
       <p>
-        We built ResumeGenius Pro as a free, no-strings-attached resume builder that combines the power 
+        We built Olaniyi Careers as a free, no-strings-attached resume builder that combines the power 
         of modern web technology with expert career knowledge. Our split-view editor gives you instant 
         visual feedback as you type, and our one-click PDF export produces print-ready documents that 
         are optimized to pass Applicant Tracking Systems (ATS).
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </p>
       <p>
         Whether you are a recent graduate writing your first resume, a seasoned professional updating 
-        your career profile, or someone making a bold career change — ResumeGenius Pro is here to 
+        your career profile, or someone making a bold career change — Olaniyi Careers is here to 
         help you put your best foot forward.
       </p>
 

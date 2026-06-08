@@ -3,7 +3,7 @@ import { ArrowRight, FileText, Layout, TrendingUp, Zap, Shield, Users } from "lu
 import AdPlacement from "@/components/AdPlacement";
 
 export const metadata = {
-  title: "ResumeGenius Pro — Build Professional Resumes in Minutes",
+  title: "Olaniyi Careers — Build Professional Resumes in Minutes",
   description: "Create stunning, ATS-friendly resumes with our free online resume builder. Instant live preview, one-click PDF export, and expert career guides.",
 };
 

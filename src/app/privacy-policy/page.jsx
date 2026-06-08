@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Privacy Policy | ResumeGenius Pro",
-  description: "Read the ResumeGenius Pro Privacy Policy to understand how we collect, use, and protect your personal information.",
+  title: "Privacy Policy | Olaniyi Careers",
+  description: "Read the Olaniyi Careers Privacy Policy to understand how we collect, use, and protect your personal information.",
 };
 
 export default function PrivacyPolicyPage() {
@@ -10,7 +10,7 @@ export default function PrivacyPolicyPage() {
       <p className="page-date">Last updated: June 8, 2026</p>
 
       <p>
-        At ResumeGenius Pro (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), we are committed to protecting 
+        At Olaniyi Careers (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), we are committed to protecting 
         your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your 
         information when you visit our website and use our resume builder service. Please read this 
         policy carefully to understand our views and practices regarding your personal data.
@@ -103,7 +103,7 @@ export default function PrivacyPolicyPage() {
         <li><strong>Opt-Out:</strong> You can opt out of personalized advertising and non-essential cookies at any time.</li>
       </ul>
       <p>
-        To exercise any of these rights, please contact us at <a href="mailto:support@resumegeniuspro.com">support@resumegeniuspro.com</a>.
+        To exercise any of these rights, please contact us at <a href="mailto:support@olaniyi.me">support@olaniyi.me</a>.
       </p>
 
       <h2>8. Children&apos;s Privacy</h2>
@@ -125,7 +125,7 @@ export default function PrivacyPolicyPage() {
         If you have any questions about this Privacy Policy or our data practices, please contact us at:
       </p>
       <ul>
-        <li><strong>Email:</strong> <a href="mailto:support@resumegeniuspro.com">support@resumegeniuspro.com</a></li>
+        <li><strong>Email:</strong> <a href="mailto:support@olaniyi.me">support@olaniyi.me</a></li>
         <li><strong>Website:</strong> <a href="/contact">Contact Form</a></li>
       </ul>
     </div>

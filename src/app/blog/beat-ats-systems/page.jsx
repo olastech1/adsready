@@ -4,7 +4,7 @@ import { ArrowLeft, Clock } from "lucide-react";
 import AdPlacement from "@/components/AdPlacement";
 
 export const metadata = {
-  title: "How to Beat ATS Systems in 2026 | ResumeGenius Pro",
+  title: "How to Beat ATS Systems in 2026 | Olaniyi Careers",
   description: "Learn how Applicant Tracking Systems work and discover proven formatting, keyword, and content strategies to ensure your resume gets past automated filters.",
 };
 
@@ -70,7 +70,7 @@ export default function ArticlePage() {
       <p>Before submitting, test your resume by copying all the text and pasting it into a plain text editor (like Notepad). If the content appears in the correct order and is fully readable, your resume will likely parse well in an ATS. If sections are jumbled, missing, or garbled, you need to simplify your formatting.</p>
 
       <h2>The Human Element</h2>
-      <p>Remember that beating the ATS is only half the battle. Once your resume passes the automated screen, a human recruiter will review it. Your resume needs to be both machine-readable AND visually appealing to a person scanning it for 6 seconds. This is why tools like ResumeGenius Pro are invaluable — our templates are designed to be ATS-compatible while still looking polished and professional.</p>
+      <p>Remember that beating the ATS is only half the battle. Once your resume passes the automated screen, a human recruiter will review it. Your resume needs to be both machine-readable AND visually appealing to a person scanning it for 6 seconds. This is why tools like Olaniyi Careers are invaluable — our templates are designed to be ATS-compatible while still looking polished and professional.</p>
 
       <div style={{ textAlign: 'center', margin: '2rem 0' }}>
         <Link href="/builder" className="btn btn-primary" style={{ padding: '0.85rem 2rem' }}>Build an ATS-Friendly Resume →</Link>

@@ -9,7 +9,7 @@ export default function Footer() {
         <div>
           <Link href="/" className="nav-logo" style={{ fontSize: '1.25rem' }}>
             <FileText size={22} />
-            ResumeGenius Pro
+            Olaniyi Careers
           </Link>
           <p className="footer-brand-desc">
             Build professional resumes in minutes with our intuitive builder. 
@@ -43,7 +43,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>&copy; {new Date().getFullYear()} ResumeGenius Pro. All rights reserved.</span>
+        <span>&copy; {new Date().getFullYear()} Olaniyi Careers. All rights reserved.</span>
         <span>Made with purpose to help you succeed.</span>
       </div>
     </footer>

@@ -15,7 +15,7 @@ export default function Navbar() {
     <nav className="navbar">
       <Link href="/" className="nav-logo">
         <FileText size={26} />
-        ResumeGenius Pro
+        Olaniyi Careers
       </Link>
 
       {/* Desktop Nav */}

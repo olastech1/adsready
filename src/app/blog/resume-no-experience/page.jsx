@@ -4,7 +4,7 @@ import { ArrowLeft, Clock } from "lucide-react";
 import AdPlacement from "@/components/AdPlacement";
 
 export const metadata = {
-  title: "How to Write a Resume with No Experience | ResumeGenius Pro",
+  title: "How to Write a Resume with No Experience | Olaniyi Careers",
   description: "Learn how to write a compelling resume when you have no work experience. Covers transferable skills, volunteer work, projects, and formatting strategies.",
 };
 

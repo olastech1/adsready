@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Terms of Service | ResumeGenius Pro",
-  description: "Read the ResumeGenius Pro Terms of Service to understand the rules and guidelines for using our resume builder and website.",
+  title: "Terms of Service | Olaniyi Careers",
+  description: "Read the Olaniyi Careers Terms of Service to understand the rules and guidelines for using our resume builder and website.",
 };
 
 export default function TermsOfServicePage() {
@@ -10,7 +10,7 @@ export default function TermsOfServicePage() {
       <p className="page-date">Last updated: June 8, 2026</p>
 
       <p>
-        Welcome to ResumeGenius Pro. By accessing or using our website and services, you agree to be 
+        Welcome to Olaniyi Careers. By accessing or using our website and services, you agree to be 
         bound by these Terms of Service (&quot;Terms&quot;). If you do not agree with any part of these Terms, 
         you must not use our services.
       </p>
@@ -25,7 +25,7 @@ export default function TermsOfServicePage() {
 
       <h2>2. Description of Service</h2>
       <p>
-        ResumeGenius Pro provides a free online resume builder that allows users to create, edit, 
+        Olaniyi Careers provides a free online resume builder that allows users to create, edit, 
         preview, and export professional resumes in PDF format. Additional features include cloud 
         storage for registered users, career guides and articles, and industry-specific resume templates.
       </p>
@@ -66,9 +66,9 @@ export default function TermsOfServicePage() {
 
       <h2>5. Intellectual Property</h2>
       <p>
-        All content, features, and functionality of the ResumeGenius Pro website — including but not 
+        All content, features, and functionality of the Olaniyi Careers website — including but not 
         limited to text, graphics, logos, icons, design elements, software code, and the overall 
-        look and feel — are owned by ResumeGenius Pro and are protected by copyright, trademark, 
+        look and feel — are owned by Olaniyi Careers and are protected by copyright, trademark, 
         and other intellectual property laws.
       </p>
       <p>
@@ -101,7 +101,7 @@ export default function TermsOfServicePage() {
 
       <h2>8. Limitation of Liability</h2>
       <p>
-        To the maximum extent permitted by applicable law, ResumeGenius Pro and its owners, operators, 
+        To the maximum extent permitted by applicable law, Olaniyi Careers and its owners, operators, 
         employees, and affiliates shall not be liable for any indirect, incidental, special, 
         consequential, or punitive damages, including but not limited to:
       </p>
@@ -118,7 +118,7 @@ export default function TermsOfServicePage() {
 
       <h2>9. Indemnification</h2>
       <p>
-        You agree to indemnify, defend, and hold harmless ResumeGenius Pro and its affiliates from 
+        You agree to indemnify, defend, and hold harmless Olaniyi Careers and its affiliates from 
         any claims, liabilities, damages, losses, and expenses (including reasonable attorney fees) 
         arising out of or related to your use of the service, violation of these Terms, or infringement 
         of any third-party rights.
@@ -144,7 +144,7 @@ export default function TermsOfServicePage() {
         If you have any questions about these Terms of Service, please contact us at:
       </p>
       <ul>
-        <li><strong>Email:</strong> <a href="mailto:support@resumegeniuspro.com">support@resumegeniuspro.com</a></li>
+        <li><strong>Email:</strong> <a href="mailto:support@olaniyi.me">support@olaniyi.me</a></li>
         <li><strong>Website:</strong> <a href="/contact">Contact Form</a></li>
       </ul>
     </div>
