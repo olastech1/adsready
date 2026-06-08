@@ -19,18 +19,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const adsensePubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID;
-
   return (
     <html lang="en">
       <head>
-        {adsensePubId && (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${adsensePubId}`}
-            crossOrigin="anonymous"
-          />
-        )}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6045179820223370"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={inter.className}>
         <Providers>
