@@ -38,7 +38,7 @@ const posts = [
   },
   {
     id: 4,
-    slug: "#",
+    slug: "/blog/perfect-cover-letter",
     title: "The Perfect Cover Letter Formula",
     excerpt: "A step-by-step breakdown of the cover letter structure that hiring managers actually want to read. Includes templates for every industry and career level, plus common mistakes to avoid.",
     readTime: "6 min read",
@@ -47,7 +47,7 @@ const posts = [
   },
   {
     id: 5,
-    slug: "#",
+    slug: "/blog/remote-interview-tips",
     title: "Remote Job Interview Tips for 2026",
     excerpt: "Master the art of virtual interviews with our comprehensive guide to camera setup, body language, answering behavioral questions, and follow-up strategies that set you apart.",
     readTime: "7 min read",
@@ -56,7 +56,7 @@ const posts = [
   },
   {
     id: 6,
-    slug: "#",
+    slug: "/blog/salary-negotiation",
     title: "How to Negotiate Your Salary Like a Pro",
     excerpt: "Data-driven strategies for salary negotiation that actually work. Learn when to negotiate, what to say, how to handle counteroffers, and the exact scripts that get results.",
     readTime: "9 min read",
