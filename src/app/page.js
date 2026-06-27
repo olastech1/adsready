@@ -52,7 +52,7 @@ export default function Home() {
           </div>
 
           {/* Features */}
-          <div className="features-grid" style={{ textAlign: 'left', width: '100%' }}>
+          <div className="features-grid" style={{ textAlign: 'left', width: '100%', marginBottom: '4rem' }}>
             <div className="glass-panel">
               <Layout size={32} color="#60a5fa" style={{ marginBottom: '1rem' }} />
               <h3 className="mb-2" style={{ fontSize: '1.15rem' }}>Stunning Templates</h3>
@@ -82,6 +82,36 @@ export default function Home() {
               <Users size={32} color="#fb923c" style={{ marginBottom: '1rem' }} />
               <h3 className="mb-2" style={{ fontSize: '1.15rem' }}>Career Hub</h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Access expert career guides, resume tips, and action verb lists curated by hiring professionals.</p>
+            </div>
+          </div>
+
+          {/* SEO Content Section for AdSense Compliance */}
+          <div className="seo-content" style={{ textAlign: 'left', maxWidth: '800px', margin: '0 auto', color: 'var(--text-muted)' }}>
+            <h2 style={{ color: 'var(--text-light)', fontSize: '2rem', marginBottom: '1.5rem', textAlign: 'center' }}>How to Build a Professional Resume in 2026</h2>
+            
+            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
+              In today&apos;s highly competitive job market, your resume is often your only chance to make a first impression. Did you know that recruiters spend an average of just 6 seconds scanning a resume before deciding whether to move forward? That means your resume format, keyword optimization, and overall readability are just as important as your actual work experience. At Olaniyi Careers, we&apos;ve engineered our free resume builder to take the guesswork out of the application process.
+            </p>
+
+            <h3 style={{ color: 'var(--text-light)', fontSize: '1.25rem', marginTop: '2rem', marginBottom: '1rem' }}>1. Beat the Applicant Tracking Systems (ATS)</h3>
+            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
+              Before a human ever sees your application, it must pass through an Applicant Tracking System (ATS). Over 98% of Fortune 500 companies use these automated scanners to filter out unqualified candidates. If your resume uses complex tables, unconventional fonts, or chaotic layouts, the ATS will fail to parse your information correctly. Our builder uses clean, standardized HTML-to-PDF generation that guarantees your text is machine-readable and properly indexed by every major ATS platform on the market.
+            </p>
+
+            <h3 style={{ color: 'var(--text-light)', fontSize: '1.25rem', marginTop: '2rem', marginBottom: '1rem' }}>2. Choose the Right Resume Format</h3>
+            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
+              Not all resumes are created equal. If you are a recent graduate, a functional or hybrid resume format that highlights your academic projects and transferable skills is ideal. If you are an experienced professional, a chronological format emphasizing career progression and quantifiable achievements will serve you best. Our builder offers a variety of premium templates—from traditional single-column layouts for conservative industries like finance and law, to modern two-column designs perfect for tech, design, and marketing roles.
+            </p>
+
+            <h3 style={{ color: 'var(--text-light)', fontSize: '1.25rem', marginTop: '2rem', marginBottom: '1rem' }}>3. Focus on Actionable Achievements</h3>
+            <p style={{ marginBottom: '1rem', lineHeight: '1.8' }}>
+              The biggest mistake job seekers make is listing their daily responsibilities instead of their achievements. Stop writing &quot;responsible for managing a team&quot; and start writing &quot;directed a cross-functional team of 12 to deliver a $2M project under budget.&quot; Utilize our extensive Career Hub resources to find the perfect action verbs, quantify your impact, and craft a compelling professional summary that sets you apart from the competition.
+            </p>
+
+            <div style={{ textAlign: 'center', marginTop: '3rem', marginBottom: '2rem' }}>
+              <Link href="/builder" className="btn btn-primary" style={{ padding: '0.85rem 2rem' }}>
+                Start Building Now
+              </Link>
             </div>
           </div>
         </main>

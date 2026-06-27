@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 export default function AdPlacement({ slot, format = "horizontal", className = "" }) {
   const adRef = useRef(null);
-  const pubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID;
+  const pubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID || "6045179820223370";
 
   useEffect(() => {
     if (pubId && adRef.current && typeof window !== "undefined") {
