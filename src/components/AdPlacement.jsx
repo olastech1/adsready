@@ -2,45 +2,35 @@
 
 import { useEffect, useRef } from "react";
 
+const PUB_ID = "5778472067739228";
+
 export default function AdPlacement({ slot, format = "horizontal", className = "" }) {
   const adRef = useRef(null);
-  const pubId = process.env.NEXT_PUBLIC_ADSENSE_PUB_ID || "5778472067739228";
+  const initialized = useRef(false);
 
   useEffect(() => {
-    if (pubId && adRef.current && typeof window !== "undefined") {
+    if (!initialized.current && adRef.current) {
+      initialized.current = true;
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (e) {
-        console.error("AdSense error:", e);
+        // ignore
       }
     }
-  }, [pubId]);
+  }, []);
 
-  const formatClass = `ad-${format}`;
+  const styles = {
+    horizontal: { display: "block", width: "100%", minHeight: "90px" },
+    rectangle: { display: "inline-block", width: "336px", height: "280px", maxWidth: "100%" },
+    vertical: { display: "inline-block", width: "160px", height: "600px", maxWidth: "100%" },
+  };
 
-  // Development mode — show placeholder
-  if (!pubId) {
-    return (
-      <div className={`ad-container ${className}`}>
-        <div className={`ad-placeholder ${formatClass}`}>
-          Ad Space
-        </div>
-      </div>
-    );
-  }
-
-  // Production mode — render actual AdSense
   return (
     <div className={`ad-container ${className}`}>
       <ins
         className="adsbygoogle"
-        style={{
-          display: "block",
-          width: format === "horizontal" ? "728px" : format === "rectangle" ? "336px" : "160px",
-          height: format === "horizontal" ? "90px" : format === "rectangle" ? "280px" : "600px",
-          maxWidth: "100%",
-        }}
-        data-ad-client={`ca-pub-${pubId}`}
+        style={styles[format] || styles.horizontal}
+        data-ad-client={`ca-pub-${PUB_ID}`}
         data-ad-slot={slot}
         data-ad-format="auto"
         data-full-width-responsive="true"

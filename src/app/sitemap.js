@@ -1,28 +1,21 @@
 export default function sitemap() {
-  const baseUrl = 'https://olaniyi.me';
+  const base = "https://olaniyi.me";
+  const now = new Date().toISOString();
 
-  // Core pages
-  const routes = ['', '/about', '/contact', '/privacy-policy', '/terms-of-service', '/blog', '/builder'].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'weekly',
-    priority: route === '' ? 1 : 0.8,
-  }));
-
-  // Blog posts
-  const blogPosts = [
-    '/blog/resume-no-experience',
-    '/blog/beat-ats-systems',
-    '/blog/action-verbs-tech-resumes',
-    '/blog/perfect-cover-letter',
-    '/blog/remote-interview-tips',
-    '/blog/salary-negotiation',
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString(),
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }));
-
-  return [...routes, ...blogPosts];
+  return [
+    { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${base}/builder`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${base}/tools`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${base}/privacy-policy`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${base}/terms-of-service`, lastModified: now, changeFrequency: "yearly", priority: 0.4 },
+    { url: `${base}/blog/resume-no-experience`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/blog/beat-ats-systems`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/blog/action-verbs-tech-resumes`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/blog/perfect-cover-letter`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/blog/remote-interview-tips`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/blog/salary-negotiation`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+  ];
 }
